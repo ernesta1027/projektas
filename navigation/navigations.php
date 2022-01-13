@@ -1,230 +1,145 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="">
-<title><?php echo $title;?> | </title>
+
+<title>  </title>
 
 <!-- Bootstrap core CSS -->
 <link href="<?php echo web_root; ?>css/bootstrap.min.css" rel="stylesheet">
-<link href="<?php echo web_root; ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-<link href="<?php echo web_root; ?>css/dataTables.bootstrap.css" rel="stylesheet" media="screen">  
-<!-- <link href="<?php echo web_root; ?>css/kcctc.css" rel="stylesheet" media="screen">  -->
-<link href="<?php echo web_root; ?>fonts/font-awesome.min.css" rel="stylesheet" media="screen">  
-<link rel="stylesheet" type="text/css" href="<?php echo web_root; ?>loginregister.css">  
-<link rel="stylesheet" href="<?php echo web_root; ?>assets/iCheck/flat/blue.css">
-<!-- bootstrap wysihtml5 - text editor -->
+<link href="<?php echo web_root; ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen"/>
+<link href="<?php echo web_root; ?>css/dataTables.bootstrap.css" rel="stylesheet" media="screen"/>  
+<link href="<?php echo web_root; ?>css/alumni.css" rel="stylesheet" media="screen"/>
+<link href="<?php echo web_root; ?>fonts/font-awesome.min.css" rel="stylesheet"/>   
+<!-- <link href="<?php echo web_root; ?>admin/adminMenu/dist/metisMenu.min.css" rel="stylesheet"/>   -->
+
 <link rel="stylesheet" href="<?php echo web_root; ?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-<link rel="stylesheet" href="<?php echo web_root; ?>css/jquery-ui.css">  
- <style type="text/css"> 
- 
-#content {
-  min-height: 550px;
-  margin: 0;
-  width: 100%;
-}
-#footer > div {
-  background-color: #BDB76B;
-  min-height: 200px;
-  padding: 10px 50px;
-  margin-top: 30px;
-  border-top: 1px solid #ddd;
+<link rel="stylesheet" href="<?php echo web_root; ?>css/jquery-ui.css"> 
+<!-- <link rel="stylesheet" href="<?php echo web_root; ?>web/viewer.css">  -->
+<!-- Plugins -->
 
-}
-.footer-links { 
-  /*margin-left: 5px;*/
-}
-#footer > footer { 
-    background-color: #BDB76B;
-  min-height: 50px;
-  padding: 10px; 
-  border-top: 1px solid #ddd;
-  color:#fff;
-
-}
-.navbar-nav {
-  float: right;
-}
-@media only screen and (max-width: 768px){
- .navbar-nav {
-  float: none;
- }
-
-}
-#content { 
-  margin-right: 0px;
-  margin-left: 90px;
-  width:90%;
-}
-
-#content:before,
-#content:after {
-  display: table;
-  content: "";
-}
-
-#content:after {
-  clear: both;
-}
-
-#content:before,
-#content:after {
-  display: table;
-  content: "";
-}
-
-#content:after {
-clear: both;
-}
-
-#mySidenav a {
-    position: absolute;
-    left: -130px;
-    transition: 0.3s;
-    padding: 20px;
-    width: 190px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    border-radius: 0 5px 5px 0;
-}
-
-#mySidenav a:hover {
-    left: 0;
-}
-
-#lesson {
-    top: 180px;
-    background-color: #BDB76B;
-}
-
-#exercise {
-    top:260px;
-    background-color: #BDB76B;
-}
-
-#download {
-    top: 340px;
-    background-color: #BDB76B;
-}
-
-#about {
-    top: 420px;
-    background-color: #BDB76B;
-}
-#login {
-    top: 500px;
-    background-color: #BDB76B;
-}
-
-#title-header {
-  background-color: #BDB76B; 
-  border-bottom: 1px solid #ddd; 
-  height: 130px;  
-  padding: 10px 0px;
-  text-align: center;
-  color: #fff;
-  font-size: 18px;
-}
- 
-
+ <style type="text/css">
+/*     #navigation {
+        margin-bottom: 40px;
+     }
+     #page-wrapper{
+        min-height: 900px;
+     }
+     #page-footer {
+        border-top: 1px solid #ddd;
+        margin-top: -15px;
+        padding: 10px;
+     }*/
+    /* * { 
+        font-family: 'Lucida Calligraphy';
+     }*/
  </style>
- 
+<!-- Custom styles for this template -->
+<!-- <link href="<?php echo web_root; ?>css/offcanvas.css" rel="stylesheet"> -->
+   <?php
+   admin_confirm_logged_in();
+  ?>
+<body>
+ <section id="navigation">
+<nav class="navbar navbar-default  " role="navigation" style="margin-top: 0px; background-color: #BDB76B">
 
-<body >
-<section id="title-header">
-  <div class="title">  
-    <img src="images/education.jpg" style="width: 10%;object-fit: contain;height: 10%" alt="IMG">
-     
-  </div>
-</section>  
-<section id="navigation">
-  <div id="mySidenav" class="sidenav">
-    <a href="<?php echo web_root; ?>index.php?q=lesson" id="lesson">Pamokos <i class="fa fa-home pull-right"></i></a> 
-    <a href="<?php echo web_root; ?>index.php?q=exercises" id="exercise">Užduotys <i class="fa fa-pencil pull-right"></i></a>
-    <a href="<?php echo web_root; ?>index.php?q=download" id="download">Dokumentai <i class="fa fa-download pull-right"></i></a>
-    <a href="<?php echo web_root; ?>index.php?q=about" id="about">Apie <i class="fa fa-info-circle pull-right"></i></a>  
-     <a href="logout.php" id="login">Atsijungti <i class="fa fa-sign-out pull-right"></i></a> 
-  </div>
-</section>  
+<div class="navbar-header" style="background-color: #BDB76B">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="navbar-brand"  href="<?php echo web_root; ?>admin/index.php" >  </a>
+</div>
 
-<section id="content"> 
-<?php check_message(); ?> 
-  <div class="container"> 
-    <?php require_once $content; ?> 
-  </div>  
+  <ul class="nav navbar-top-links navbar-right" >
+   <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" >
+                <i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['NAME']; ?>  
+            </a> 
+
+    </li>
+         <li><a href="<?php echo web_root; ?>admin/logout.php"><i class="fa fa-sign-out fa-fw" ></i> Atsijungti</a>
+                </li>
+  </ul>
+
+<div class="navbar-default sidebar"role="navigation" style="background-color: #BDB76B">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+            <!--     <li>
+                    <a href="<?php echo web_root; ?>admin/index.php"><i class="fa fa-dashboard fa-fw"></i> Statistic</a>
+                </li> -->
+
+                <li>
+                     <a href="<?php echo web_root; ?>admin/modules/lesson/index.php"><i class="fa fa-user fa-fw"></i> Pamokos </a> 
+                </li>
+                 <li>
+                     <a href="<?php echo web_root; ?>admin/modules/exercises/index.php"><i class="fa fa-user fa-fw"></i> Užduotys </a> 
+                </li>
+                 <li>
+                     <a href="<?php echo web_root; ?>admin/modules/modstudent/index.php"><i class="fa fa-user fa-fw"></i> Studentai </a> 
+                </li>
+
+                
+                <li><a href="<?php echo web_root; ?>admin/modules/user/index.php"><i class="fa fa-user fa-fw"></i> Redaguoti vartotojus</a></li>
+                 <!-- <li><a href="<?php echo web_root; ?>admin/modules/autonumber/index.php"><i class="fa fa-reload fa-fw"></i> Autonumber</a></li> -->
+                 <!-- <li><a href="<?php echo web_root; ?>admin/modules/report/index.php"><i class="fa fa-info fa-fw"></i> Report</a></li> -->
+
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+</nav>
 </section>
 
-<section id="footer"> 
-<!--      <div > 
 
-</div>   -->
-<footer  >
-    <p align="left">&copy; Kaunas</p>
-</footer>
+<section id="page-wrapper"> 
+  <?php  check_message(); ?> 
+  <?php  require_once $content;?>  
+ </section> 
+
+<section id="page-footer"> 
+      <footer>  <p align="center">&copy; Ernesta, Kaunas</p></footer>
 </section>
-  <script type="text/javascript" language="javascript" src="<?php echo web_root; ?>jquery/jquery.min.js"></script>
-  <script src="<?php echo web_root; ?>js/bootstrap.min.js"></script> 
-  <script type="text/javascript" src="<?php echo web_root; ?>js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-  <script type="text/javascript" src="<?php echo web_root; ?>js/locales/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
-  <script type="text/javascript" language="javascript" src="<?php echo web_root; ?>js/jquery.dataTables.js"></script> 
-  <script src="<?php echo web_root;?>assets/iCheck/icheck.min.js"></script>
-  <!-- Bootstrap WYSIHTML5 -->
-  <script type="text/javascript" src="<?php echo web_root; ?>js/jquery-ui.js"></script> 
-  <script type="text/javascript" src="<?php echo web_root; ?>js/autofunc.js"></script> 
-  <script src="<?php echo web_root;?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Page Script -->
-<script>
- 
-  $(function () {
-    //Add text editor
-    $("#compose-textarea").wysihtml5();
-  });
-</script>
+<!-- Plugins -->
+
+<script type="text/javascript" language="javascript" src="<?php echo web_root; ?>js/jquery.js"></script> 
+<script src="<?php echo web_root; ?>js/bootstrap.min.js"></script>
+<script src="<?php echo web_root; ?>admin/adminMenu/dist/metisMenu.min.js"></script>
+  
+<script src="<?php echo web_root; ?>js/jquery.dataTables.min.js"></script>/
+<script src="<?php echo web_root; ?>js/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript" src="<?php echo web_root; ?>js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="<?php echo web_root; ?>js/locales/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
+
+<script type="text/javascript" language="javascript" src="<?php echo web_root; ?>js/kcctc.js"></script>
+<script src="<?php echo web_root;?>assets/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script type="text/javascript" src="<?php echo web_root; ?>js/jquery-ui.js"></script>
+<script type="text/javascript" src="<?php echo web_root; ?>js/autofunc.js"></script>
+
 <script type="text/javascript" charset="utf-8">
-
 $(document).ready(function() {
     var t = $('#example').DataTable( {
-      "bSort": false,
+        "bSort": false,
         "columnDefs": [ {
             "searchable": false,
             "orderable": false,
             "targets": 0
         } ],
+ 
 
           //vertical scroll
          // "scrollY":        "300px",
-        "scrollCollapse": true,
+
+        // "scrollCollapse": true,
 
         //ordering start at column 1
         "order": [[ 1, 'desc' ]]
     } );
- 
-    t.on( 'order.dt search.dt', function () {
-        t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-            cell.innerHTML = i+1;
-        } );
-    } ).draw();
-} );
-$(document).ready(function() {
-    var t = $('#example2').DataTable( {
-      "bSort": false,
-        "columnDefs": [ {
-            "searchable": false,
-            "orderable": false,
-            "targets": 0
-        } ],
 
-          //vertical scroll
-         // "scrollY":        "300px",
-        "scrollCollapse": true,
-
-        //ordering start at column 1
-        "order": [[ 1, 'desc' ]]
-    } );
- 
     t.on( 'order.dt search.dt', function () {
         t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
             cell.innerHTML = i+1;
@@ -232,24 +147,89 @@ $(document).ready(function() {
     } ).draw();
 } );
 
-</script>  
+</script>
 
-<script type="text/javascript"> 
 
-$('#date_picker').datetimepicker({
-  format: 'mm/dd/yyyy',
+<script>
+
+$(function(){
+  $(".tds").each(function(i){
+    len=$(this).text().length;
+    if(len>80)
+    {
+      $(this).text($(this).text().substr(0,80)+'...');
+    }
+  });
+});
+  $(function () {
+    //Add text editor 
+     $("#ANNOUNCEMENT_WHAT").wysihtml5();
+     $("#EVENT_WHAT").wysihtml5();
+     $("#compose-textarea").wysihtml5();
+  });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker2').datetimepicker({
+            locale: 'ru',
+             autoclose: 1,
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+$("#retype_user_pass").focusout(function(){
+
+        var pass = $("#user_pass").val();
+        var repass = $(this).val();
+        if (pass != repass) {
+            alert("Password does not match");
+        };
+});
+
+function validatedpass(){
+
+     var pass = $("#user_pass").val();
+        var repass = $("#retype_user_pass").val();
+        if (pass != repass) {
+            alert("Password does not match");
+            return false
+        }else{
+            return true
+        };
+}
+
+$('#date_pickerfrom').datetimepicker({
+  format: 'yyyy',
     language:  'en',
     weekStart: 1,
     todayBtn:  1,
     autoclose: 1,
     todayHighlight: 1,
-    startView: 2,
-    minView: 2,
+    startView: 4,
+    minView: 4,
     forceParse: 0
-});
+    });
 
-  
+
+$('#date_pickerto').datetimepicker({
+  format: 'yyyy',
+    language:  'en',
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 4,
+    minView: 4,
+    forceParse: 0
+    });
+
+
+
 </script>
+
+
 <script>
   function checkall(selector)
   {
@@ -285,40 +265,25 @@ $('#date_picker').datetimepicker({
         }
         textBox.value = trim(textBox.value);
       }
+
+  </script>
+
+<script type="text/javascript">
  
 
-  $(document).on("change",".radios",function(){
 
-    var exerciseid = $(this).data('id');
-    var value = $(this).val();
+// function truncateText(selector, maxLength) {
+//     var element = document.querySelector(selector),
+//         truncated = element.innerText;
 
-       // alert(value);
-       if ($(this).is(':checked'))
-        {
-            $.ajax({
-            type : "POST",
-            url : "validation.php",
-            dataType: "text",
-            data: {ExerciseID:exerciseid,Value:value},
-            success : function(data){
-              // alert(data)
-            }
-           });
-        }
-  
-
-  });
-
-//    $(function(){
-//   $('input[type="radio"]').change(function(){
-//     if ($(this).is(':checked'))
-//     {
-//       alert($(this).val());
-//       $(this).disabled=true;
+//     if (truncated.length > maxLength) {
+//         truncated = truncated.substr(0,maxLength) + '...';
 //     }
-//   });
-// });
-  </script>     
+//     return truncated;
+// }
+// //You can then call the function with something like what i have below.
+// document.querySelector('#tds').innerText = truncateText('#tds', 107);
+    </script>
 
 </body>
 </html>
